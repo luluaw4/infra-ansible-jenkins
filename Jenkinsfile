@@ -19,7 +19,7 @@ pipeline {
         stage('Run Ansible Playbook') {
             steps {
                 sshagent(['ansible-ssh-key']) {
-                    sh 'ansible-playbook -i hosts.ini deploy.yml || exit 1'
+                    sh 'ansible-playbook -i host.ini deploy.yml || exit 1'
                 }
             }
         }
